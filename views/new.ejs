@@ -9,13 +9,34 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <style>
+      .custom {
+        display: flex;
+        flex-direction: column;
+      }
+      .custom .first {
+        order: 1;
+      }
+      .second {
+        order: 2;
+      }
+    </style>
     <title>Blog</title>
   </head>
   <body>
     <div class="container">
       <h1 class="my-4">New Article</h1>
-      <form action="/articles" method="POST">
+      <form action="/articles" method="POST" class="custom">
         <%- include('_form_fields') %>
+        <div class="first">
+          <select name="user" id="user">
+            <% bayload.users.forEach(user=> {%>
+
+            <option value="<%= user.id %>"><%= user.name %></option>
+
+            <%})%>
+          </select>
+        </div>
       </form>
     </div>
   </body>

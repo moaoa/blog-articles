@@ -2,18 +2,20 @@
 <input
   class="form-control mt-3"
   type="text"
-  value="<%= article.title%>"
+  value="<%= bayload.article.title%>"
   class="form-control"
   id="title"
   name="title"
 />
 <label for="description">description</label>
 <textarea class="form-control mt-3" name="description" id="description">
-    <%= article.description%></textarea
+    <%= bayload.article.description%></textarea
 >
 <label for="markdown">markdown</label>
 <textarea class="form-control my-3 " name="markdown" id="markdown">
-<%= article.markdown%></textarea
+<%= bayload.article.markdown%></textarea
 >
-<button class="btn btn-primary " type="submit">Save</button>
-<a class="btn btn-secondary ml-3" href="/">Cancele</a>
+<div class="second">
+  <button class="btn btn-primary " type="submit">Save</button>
+  <a class="btn btn-secondary ml-3" href="/">Cancele</a>
+</div>

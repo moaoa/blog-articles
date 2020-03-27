@@ -15,15 +15,18 @@
     <div class="container">
       <div class="card mt-4">
         <div class="card-body">
-          <h1 class="card-title"><%= article.title %></h1>
+          <h1 class="card-title"><%= bayload.article.title %></h1>
           <div class="card-subtitle text-muted">
-            <%= article.createdAt.toLocaleDateString() %>
+            <%= bayload.article.createdAt.toLocaleDateString() %>
           </div>
-          <div class="card-text "><%= article.description %></div>
-          <div class="card-text "><%- article.markdown %></div>
+          <div class="card-text "><%= bayload.article.description %></div>
+          <div class="card-text ">user : <%= bayload.article.user.name %></div>
+          <div class="card-text "><%- bayload.article.markdown %></div>
           <a href="/" class="btn btn-secondary ">All articles</a>
+
+          <% if(bayload.isAtuh) {%>
           <form
-            action="/articles/<%=article.slug%>?_method=DELETE"
+            action="/articles/<%=bayload.article.slug%>?_method=DELETE"
             class="d-inline"
             method="POST"
           >
@@ -31,9 +34,13 @@
               Delete
             </button>
           </form>
-          <a href="/articles/edit/<%=article.slug%>" class="btn btn-primary "
+
+          <a
+            href="/articles/edit/<%=bayload.article.slug%>"
+            class="btn btn-primary "
             >edit</a
           >
+          <%}%>
         </div>
       </div>
     </div>

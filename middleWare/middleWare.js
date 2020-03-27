@@ -10,7 +10,7 @@ const errorHandler = () => (err, req, res, next) => {
   if (err)
     res.json({
       msg: err.message,
-      stack: proccess.env.NODE_ENV === "production" ? "" : err.stack
+      stack: process.env.NODE_ENV === "production" ? "" : err.stack
     });
 };
 

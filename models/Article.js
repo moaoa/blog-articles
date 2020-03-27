@@ -21,6 +21,11 @@ const Schema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "User"
   }
 });
 

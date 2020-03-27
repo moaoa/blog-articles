@@ -14,8 +14,12 @@
   <body>
     <div class="container">
       <h1 class="mt-5">Blog articles</h1>
+      <a href="/users/new" class="btn btn-secondary ">Sign Up</a>
+      <a href="/users/login" class="btn btn-dark ">Sign In</a>
       <a href="/articles/new" class="btn btn-primary">New Articles</a>
-      <% articles.forEach(article =>{ %>
+      <% if(bayload.user) {%>
+      <h3>hi <%= bayload.user.name %></h3>
+      <%}%> <% bayload.articles.forEach(article => { %>
       <div class="card mt-4">
         <div class="card-body">
           <h1 class="card-title"><%= article.title %></h1>
